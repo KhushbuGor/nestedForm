@@ -1,7 +1,14 @@
 <%= form_for @project do |f| %>
   
+  <%= f.label :name%>  
     <%= f.text_field :name %>
+
+    <%= f.label :description%>
     <%= f.text_field :description %>
+    <div class="field">
+      <%= f.label :files %>
+      <%= f.file_field :files, multiple: true %>
+    </div>
     <h3>Tasks</h3>
     <div id='tasks'>
       <%= f.fields_for :tasks do |task| %>

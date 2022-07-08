@@ -10,6 +10,10 @@
   <%= @project.description %>
 </p>
 
+<% @project.files.each do |file| %>
+  <%= link_to file.filename, rails_blob_path(file, disposition: :inline) %>
+<% end %>
+
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
